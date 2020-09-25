@@ -7,16 +7,17 @@ public class Program {
 
 	public static void main(String[] args) {
 
-		List<Integer> intList = new ArrayList<Integer>();
+		List<Object> myObjs = new ArrayList<Object>();
 		
-		intList.add(10);
-		intList.add(5);
+		myObjs.add("Maria");
+		myObjs.add("Alex");
 		
-		List<? extends Number> list = intList;
+		List<? super Number> myNums = myObjs;
 		
-		Number x = list.get(0);
+		myNums.add(10);
+		myNums.add(3.14);
 		
-		//list.add(20); // erro de compilacao
+		//Number x = myNums.get(0); // erro de compilacao contravariancia
 	}
 
 }
